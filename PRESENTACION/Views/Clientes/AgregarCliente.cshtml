@@ -1,0 +1,69 @@
+﻿@model ENTIDAD.ClienteE
+
+@{
+    ViewBag.Title = "AgregarCliente";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Agregar Nuevo Cliente</h2>
+
+<table>
+    @using (Html.BeginForm("InsertarCliente", "Clientes", FormMethod.Post))
+    {
+        <tr>
+            <td>Nombres: </td>
+            <td><input type="text" name="txtNombres" /></td>
+        </tr>
+
+        <tr>
+            <td>Apellidos: </td>
+            <td><input type="text" name="txtApellidos" /></td>
+        </tr>
+
+        <tr>
+            <td>Tipo Documento: </td>
+            <td><input type="text" name="txtTipo_Documento" /></td>
+        </tr>
+
+        <tr>
+            <td>Documento: </td>
+            <td><input type="number" name="txtDocumento" /></td>
+        </tr>
+
+        <tr>
+            <td>Tipo de Cuenta: </td>
+            <td><input type="text" name="txtTipo_Cuenta" /></td>
+        </tr>
+
+        @*<tr>
+                <td>Fecha Creacion: </td>
+                <td><input type="date" name="txtFecha_Creacion" /></td>
+            </tr>*@
+
+        <tr>
+            <td>Ciudad de Apertura: </td>
+            <td><input type="text" name="txtCiudad_Apertura" /></td>
+        </tr>
+
+        <tr>
+            <td>Numero de Cuenta: </td>
+            <td><input type="number" name="txtNumero_Cuenta" /></td>
+        </tr>
+
+        <tr>
+            <td>Tipo de Cliente: </td>
+            <td><input type="text" name="txtTipo_Cliente" /></td>
+        </tr>
+
+
+
+
+
+        <tr>
+            <td><button type="submit">Agregar Cliente</button></td>
+        </tr>
+
+
+    }
+</table>
+

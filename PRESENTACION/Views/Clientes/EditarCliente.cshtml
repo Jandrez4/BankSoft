@@ -1,0 +1,73 @@
+﻿@model ENTIDAD.ClienteE
+
+@{
+    ViewBag.Title = "EditarCliente";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Editar Cliente</h2>
+
+<table>
+    @using (Html.BeginForm("ActualizarCliente", "Clientes", FormMethod.Post))
+    {
+        <tr>
+            <td>ID: </td>
+            <td><input type="text" name="txtId" value="@Model.Id_Cliente" readonly/></td>
+        </tr>
+
+        <tr>
+            <td>Nombres: </td>
+            <td><input type="text" name="txtNombres" value="@Model.Nombre"/></td>
+        </tr>
+
+        <tr>
+            <td>Apellidos: </td>
+            <td><input type="text" name="txtApellidos" value="@Model.Apellido"/></td>
+        </tr>
+
+        <tr>
+            <td>Documento: </td>
+            <td><input type="number" name="txtDocumento" value="@Model.Documento" readonly/></td>
+        </tr>
+
+        <tr>
+            <td>Tipo de Cuenta: </td>
+            <td><input type="text" name="txtTipo_Cuenta" value="@Model.Tipo_Cuenta" /></td>
+        </tr>
+
+        @*<tr>
+                <td>Fecha Creacion: </td>
+                <td><input type="date" name="txtFecha_Creacion" /></td>
+            </tr>*@
+
+        <tr>
+            <td>Ciudad de Apertura: </td>
+            <td><input type="text" name="txtCiudad_Apertura" value="@Model.Origen_Apertura_Cuenta"/></td>
+        </tr>
+
+        <tr>
+            <td>Numero de Cuenta: </td>
+            <td><input type="number" name="txtNumero_Cuenta" value="@Model.Num_Cuenta" readonly/></td>
+        </tr>
+
+        <tr>
+            <td>Tipo de Cliente: </td>
+            <td><input type="text" name="txtTipo_Cliente" value="@Model.Tipo_Cliente"/></td>
+        </tr>
+
+
+        <tr>
+            <td>Tipo Documento: </td>
+            <td><input type="text" name="txtTipo_Documento" value="@Model.Tipo_Documento"/></td>
+        </tr>
+
+
+        <tr>
+            <td><button type="submit">Actualizar Cliente</button></td>
+        </tr>
+
+
+    }
+</table>
+
+

@@ -1,0 +1,34 @@
+﻿@model List<ENTIDAD.RetiroE>
+
+@{
+    ViewBag.Title = "ListadoRetiros";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Listado de Retiros</h2>
+
+<button type="button"><a href="/Retiros/InsertarRetiro">Nuevo Retiro</a></button>
+
+<table border="1">
+    <tr>
+        <th>ID_RETIRO</th>
+        <th>ID_CLIENTE</th>
+        <th>DOCUMENTO</th>
+        <th>NUMERO CUENTA</th>
+        <th>VALOR RETIRO</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id_Retiro</td>
+    <td>@item.clienteE.Id_Cliente</td>
+    <td>@item.clienteE.Documento</td>
+    <td>@item.clienteE.Num_Cuenta</td>
+    <td>@item.Valor_Retiro</td>
+    @*<td>@Html.ActionLink("ACTUALIZAR CLIENTE", "EditarCliente", new { Id_Cliente = item.Id_Cliente })</td>
+        <td>@Html.ActionLink("ELIMINAR CLIENTE", "EliminarCliente", new { Id_Cliente = item.Id_Cliente })</td>*@
+
+</tr>
+    }
+</table>
+

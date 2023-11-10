@@ -1,0 +1,79 @@
+﻿@model ENTIDAD.ReporteE
+
+@{
+    ViewBag.Title = "InsertarRetiro";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+
+    var listaClientes = ViewBag.ListadoClientes;
+}
+
+<h2>Nuevo Retiro</h2>
+
+<table>
+    @using (Html.BeginForm("CrearRetiro", "Retiros", FormMethod.Post))
+    {
+        @*<tr>
+            <td>ID Cliente: </td>
+            <td>
+                <select cId>
+                    @foreach (var item in listaClientes)
+                    {
+                        <option value="@item.Id_Cliente">@item.Id_Cliente</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Documento: </td>
+            <td>
+                <select cDocumento>
+                    @foreach (var item in listaClientes)
+                    {
+                        <option value="@item.Id_Cliente">@item.Documento</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Numero Cuenta: </td>
+            <td>
+                <select cCuenta>
+                    @foreach (var item in listaClientes)
+                    {
+                        <option value="@item.Id_Cliente">@item.Num_Cuenta</option>
+                    }
+                </select>
+            </td>
+        </tr>*@
+
+         <tr>
+                <td>ID Cliente: </td>
+                <td><input type="number" name="txtID" /></td>
+            </tr>
+
+
+            <tr>
+                <td>Documento: </td>
+                <td><input type="number" name="txtDocumento" /></td>
+            </tr>
+
+            <tr>
+                <td>Numero cuenta: </td>
+                <td><input type="number" name="txtNum" /></td>
+            </tr>
+
+        <tr>
+            <td>Valor Retiro: </td>
+            <td><input type="number" name="txtRetiro" /></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit">Crear Retiro</button></td>
+        </tr>
+
+    }
+
+</table>
+
+

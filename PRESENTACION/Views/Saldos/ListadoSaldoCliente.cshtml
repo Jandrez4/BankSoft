@@ -1,0 +1,32 @@
+﻿@model List<ENTIDAD.SaldoE>
+
+@{
+    ViewBag.Title = "ListadoSaldoCliente";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Listado de Saldo Clientes</h2>
+
+<table border="1">
+    <tr>
+        <th>ID_RETIRO</th>
+        <th>ID_CLIENTE</th>
+        <th>DOCUMENTO</th>
+        <th>NUMERO CUENTA</th>
+        <th>SALDO ACTUAL</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id_Saldo</td>
+            <td>@item.clienteE.Id_Cliente</td>
+            <td>@item.clienteE.Documento</td>
+            <td>@item.clienteE.Num_Cuenta</td>
+            <td>@item.Saldo_Actual</td>
+            @*<td>@Html.ActionLink("ACTUALIZAR CLIENTE", "EditarCliente", new { Id_Cliente = item.Id_Cliente })</td>
+                <td>@Html.ActionLink("ELIMINAR CLIENTE", "EliminarCliente", new { Id_Cliente = item.Id_Cliente })</td>*@
+
+        </tr>
+    }
+</table>
+

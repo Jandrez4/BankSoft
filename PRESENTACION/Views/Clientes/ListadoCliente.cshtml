@@ -1,0 +1,41 @@
+﻿@model List<ENTIDAD.ClienteE>
+
+@{
+    ViewBag.Title = "ListadoCliente";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Listado de Cliente</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>NOMBRES</th>
+        <th>APELLIDOS</th>
+        <th>TIPO DOCUMENTO</th>
+        <th>DOCUMENTO</th>
+        <th>TIPO CLIENTE</th>
+        <th>ORIGEN CUENTA</th>
+        <th>TIPO CUENTA</th>
+        <th>NUMERO CUENTA</th>
+    </tr>
+    @foreach(
+        var item in Model)
+     {
+<tr>
+    <td>@item.Id_Cliente</td>
+    <td>@item.Nombre</td>
+    <td>@item.Apellido</td>
+    <td>@item.Tipo_Documento</td>
+    <td>@item.Documento</td>
+    <td>@item.Tipo_Cliente</td>
+    <td>@item.Origen_Apertura_Cuenta</td>
+    <td>@item.Tipo_Cuenta</td>
+    <td>@item.Num_Cuenta</td>
+    <td>@Html.ActionLink("ACTUALIZAR CLIENTE", "EditarCliente", new { Id_Cliente = item.Id_Cliente })</td>
+    <td>@Html.ActionLink("ELIMINAR CLIENTE", "EliminarCliente", new { Id_Cliente = item.Id_Cliente })</td>
+
+</tr>
+     }
+</table>
+

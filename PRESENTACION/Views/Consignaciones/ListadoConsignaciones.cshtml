@@ -1,0 +1,40 @@
+﻿@model List<ENTIDAD.ConsignacionE>
+
+@{
+    ViewBag.Title = "ListadoConsignaciones";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>Listado de Consignaciones Clientes</h2>
+
+<div>
+    <button type="button"><a href="/Consignaciones/InsertarConsignacion">Nueva Consignacion</a></button>
+</div>
+
+<table border="1">
+    <tr>
+        <th>ID_CONSIGNACION</th>
+        <th>ID_CLIENTE</th>
+        <th>DOCUMENTO QUIEN ENVIA</th>
+        <th>DOCUMENTO CLIENTE</th>
+        <th>NUMERO CUENTA</th>
+        <th>CONSIGNACION</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id_Consignacion</td>
+            <td>@item.clienteE.Id_Cliente</td>
+            <td>@item.Documento_Envia</td>
+            <td>@item.clienteE.Documento</td>
+            <td>@item.clienteE.Num_Cuenta</td>
+            <td>@item.Valor_Consignacion</td>
+            @*<td>@Html.ActionLink("ACTUALIZAR CLIENTE", "EditarCliente", new { Id_Cliente = item.Id_Cliente })</td>
+                <td>@Html.ActionLink("ELIMINAR CLIENTE", "EliminarCliente", new { Id_Cliente = item.Id_Cliente })</td>*@
+
+        </tr>
+    }
+</table>
+
+
+

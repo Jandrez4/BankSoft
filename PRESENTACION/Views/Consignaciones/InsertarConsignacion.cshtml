@@ -1,0 +1,47 @@
+﻿@model ENTIDAD.ConsignacionE
+
+@{
+    ViewBag.Title = "InsertarConsignacion";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+
+    var listaConsignaciones = ViewBag.ListadoConsinaciones;
+}
+
+<h2>Nueva Consignacion</h2>
+<table>
+    @using (Html.BeginForm("CrearConsignacion", "Consignaciones", FormMethod.Post))
+    {
+        <tr>
+            <td>ID Cliente: </td>
+            <td><input type="number" name="txtIdCliente" /></td>
+        </tr>
+
+        <tr>
+            <td>Documento quien Envia: </td>
+            <td><input type="number" name="txtDoc_Envia" /></td>
+        </tr>
+
+
+        <tr>
+            <td>Documento Cliente: </td>
+            <td><input type="number" name="txtDoc_Cliente" /></td>
+        </tr>
+
+        <tr>
+            <td>Numero cuenta: </td>
+            <td><input type="number" name="txtNum" /></td>
+        </tr>
+
+        <tr>
+            <td>Valor Consignacion: </td>
+            <td><input type="number" name="txtConsignacion" /></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit">Crear Consignacion</button></td>
+        </tr>
+
+    }
+
+</table>
+
